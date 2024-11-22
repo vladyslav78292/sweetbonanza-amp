@@ -10,7 +10,6 @@ h1, h2, h3, h4, h5, h6, p, a, em, img, b, i, ol, ul, li, table, tbody, tfoot, bo
     border: 0;
     font-size: 100%;
     color: #fff;
-    font: inherit;
     vertical-align: baseline;
 }
 
@@ -19,8 +18,14 @@ body {
 }
 
 h1 {
-  padding: 30px 10px 20px 10px;
+  padding: 0px 10px 0px 10px;
   font-size: 36px;
+}
+
+.check_container ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .check_container p {
@@ -31,6 +36,12 @@ h1 {
 .check {
   height: 30px;
   margin-right: 10px;
+}
+
+.ordered {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 header {
@@ -115,7 +126,11 @@ ol {
   flex-direction: column;
 }
 
-ol li {
+.unordered > li {
+  list-style-type: none;
+}
+
+ol > li {
   list-style-type: none;
   position: relative;
 }
@@ -150,7 +165,7 @@ ol > li::before {
   width: fit-content;
   font-weight: bold;
   border-radius: 25px;
-  margin-top: 50px;
+  margin-top: 15px;
   display: inline-block;
   padding: 9px 21px;
   background-color: #FFA512;
@@ -251,7 +266,7 @@ table {  display: block;
   width: fit-content;
   overflow: auto;
   border: 1px solid #FFA512;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 
 table td {
@@ -259,13 +274,18 @@ table td {
   border: 1px solid #FFA512;
   border-left: none;
   border-bottom: none;
-  text-align:center;
+  /* text-align:center; */
   padding:10px;
+
 }
 
 h2, h3 {
   text-align: center;
   padding: 15px 0 0;
+}
+
+.promo {
+  width: 245px;
 }
 
 /* .content_page ul:not(:last-of-type) {
@@ -537,8 +557,8 @@ ul li {
   width: 100%;
 }
 
-.banner_container img {
-  width: 100%;
+.banner_container img, .homepage {
+  width: 500px;
 }
 
 .fixed_buttons {
@@ -596,6 +616,9 @@ ul li {
 }
 
 @media (max-width: 720px) {
+  .banner_container img, .homepage {
+    width: 100%;
+}
   .content_page {
     padding-left: 20px;
     padding-right: 20px;
@@ -775,8 +798,8 @@ table p {
   color: #ffa512;
 }
 
-.check_container > li {
-  list-style-type: none;
+.check_container ul {
+  list-style-type: none !important;
 }
 
 .steps img {
