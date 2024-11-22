@@ -120,8 +120,9 @@ button {
 
 ol {
   margin-top: 20px;
-  padding-left: 70px;
+  padding-left: 50px;
   counter-reset: li;
+  gap: 13px ;
   display: flex;
   flex-direction: column;
 }
@@ -152,7 +153,7 @@ ol > li::before {
   content: counter(li);
   counter-increment: li;
   position: absolute; 
-  left: -65px;
+  left: -45px;
   border: 1px solid #10AD77; 
   border-radius: 50%; 
   padding: 5px 12px;
@@ -268,7 +269,9 @@ table {  display: block;
   border: 1px solid #FFA512;
   border-radius: 10px;
 }
-
+.empty_td {
+  border-bottom: 1px solid transparent;
+}
 table td {
   border-radius: 20px;
   border: 1px solid #FFA512;
@@ -409,6 +412,14 @@ footer div:last-of-type {
   justify-content: space-between;
 }
 
+.text_table_container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+
 .spor {
   max-height: 570px;
   min-width: 220px;
@@ -523,8 +534,14 @@ section:first-of-type {
   list-style: none;
 }
 
+.selected em {
+  color: #fff;
+  padding: 0;
+}
+
 em {
   color: #FFA512;
+  display: inline-block;
 }
 
 .categories .categories__container a {
@@ -575,6 +592,12 @@ ul li {
 @media (max-width: 1400px) {
   .categories .categories__container {
     grid-template-columns: repeat(2,1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .text_table_container {
+    flex-direction: column;
   }
 }
 
